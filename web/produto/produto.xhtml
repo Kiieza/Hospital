@@ -130,33 +130,32 @@
                       id="popupEstoque"
                       visible="#{produtoControle.popupEstoque}" >
                 <h:form id="formPopupEstoque">
-                    <h:panelGrid columns="2">
-                        <p:outputLabel value="Produto:"/>
+                   
+                        <p:outputLabel value="Produto: "  />
                         <p:outputLabel value="#{produtoControle.produto.produto}"/>
-                        <p:outputLabel value="Quantidade:" />
+                        <br />
+                        <p:outputLabel value="Quantidade: " />
                         <p:outputLabel value="#{produtoControle.produto.quantidade}"/>
-
+                        <br />
                         <div id="linha">                        
                         </div>
                         <input type="radio" name="selecionar" /> Adicionar
-                        <br />
                         <input type="radio" name="selecionar"/> Remover
-                                   
-                    </h:panelGrid>
-                    <p/>
+                        <br />
+                        <p:inputText value=""
+                                    maxlength="5" 
+                                    required="true" requiredMessage="Quantidade obrigatória"/>
+                        <br />
+                        <br />
+              
                     <p:outputPanel style="width: 100%; text-align:center" >
                         <p:commandButton value="Cancelar" action="#{produtoControle.fecharPopupEstoque()}" 
                                          update=":popupEstoque" immediate="true" />
                         <p:commandButton value="Confirmar" action="#{produtoControle.alterarEstoque()}" 
                                          update=":formPrincipal :popupEstoque"/>                           
                     </p:outputPanel>
-                    <p:outputPanel style="width: 100%; text-align:center" >
-                        <p:messages />
-                    </p:outputPanel>
                 </h:form>
             </p:dialog>
-            
-
         </ui:define>
     </ui:composition>
 </html>

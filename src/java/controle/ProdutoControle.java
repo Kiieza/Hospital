@@ -41,7 +41,7 @@ public class ProdutoControle implements Serializable {
         this.popupEstoque = false;
     }
     public void alterarEstoque(){
-
+        
     }
     public void abrePopupNovo(){
         produto = new Produto();
